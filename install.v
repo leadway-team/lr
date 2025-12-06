@@ -37,6 +37,6 @@ fn main() {
 		println("\rMaking executable...[Er] \nCan't permit executable rights");
 		exit(1);
 	};
-	println("\rMaking executable...[Ok] \nNow, it's better re-login now")
+	println("\rMaking executable...[Ok] ")
 
 }
