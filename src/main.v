@@ -18,12 +18,12 @@ fn list_folder(napath string, indent string) {
 		return
 	}
 
-	println(indent+"=>" + if indent == "" {path} else {napath} + " contains:")
+	println(indent+"=> ${path} contains:")
 	for i in ( os.ls(path) or {[]} ) {
-		print(indent+"${path}/${i}")
+		print(indent+"/${i}")
 		if os.is_dir("${path}/${i}") {
 			println(" <= Which is a directory")
-			list_folder("${i}", indent+"\t")
+			list_folder("${path+"/"+i}", indent+" ")
 		} else {
 			println("")
 		}
