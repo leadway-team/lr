@@ -20,7 +20,7 @@ fn main() {
 	}
 	print("Compile files in ${src_dir} and copy result to ${install_folder}\n");
 
-	if read_line("It's ok? [y/N]")! != "y" {
+	if read_line("It's ok? [y/N] ")! != "y" {
 		println("Aborted by user...")
 		exit(1)
 	}
