@@ -12,12 +12,18 @@ fn main() {
 
 fn list_folder(napath string, indent string) {
 	mut path := os.abs_path(napath)
-	println(indent+"=> ${path} contains:")
+
+	if (os.ls(path) or {[]}).len == 0 {
+		println(indent+"Directory ${napath} is empty")
+		return
+	}
+
+	println(indent+"=>" + if indent == "" {path} else {napath} + " contains:")
 	for i in ( os.ls(path) or {[]} ) {
 		print(indent+"${path}/${i}")
 		if os.is_dir("${path}/${i}") {
 			println(" <= Which is a directory")
-			list_folder("${path}/${i}", indent+"\t")
+			list_folder("${i}", indent+"\t")
 		} else {
 			println("")
 		}
