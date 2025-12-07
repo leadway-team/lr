@@ -1,0 +1,10 @@
+LR
+
+-=RUN=-
+$ v run src/ <...>... - directories to list
+
+-=INSTALL=-
+# v run install.v
+
+-=USAGE=-
+$ lr <...>... - directories to list
